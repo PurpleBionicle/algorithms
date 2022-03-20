@@ -1,5 +1,5 @@
 
-def str_search():
+def substr_search():
     global j
     str = input('Введите строку:')
     substr = input('Введите подстроку:')
