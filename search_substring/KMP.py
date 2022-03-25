@@ -17,7 +17,7 @@ def find_pi(substr):
     return pi
 
 
-def str_search():
+def substr_search():
     # Кнута-Морриса-Пратта
     str = input('Введите строку:')
     substr = input('Введите подстроку:')

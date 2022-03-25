@@ -3,7 +3,6 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 <img alt="Telegram" src="https://img.shields.io/badge/nikitosk_a-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
 
-
 <h3>Алгоритмы сортировок : </h3>
 
 | Название    |     Сложность     | Готовность  |
@@ -11,15 +10,17 @@
 |     |    |        |
 |   |                   |         |
 |  |                   |         |
+-----
 Описание алгоритмов ищите в README в папках с реализацией
 
 <h3>Алгоритмы по поиску подстроки : </h3>
 
-| Название     | Сложность |      Готовность      |
-|--------------|:---------:|:--------------------:|
-| Прямой поиск |           |                      |
-| КМП          |           |  :white_check_mark:  |
-| БМХ          |           | :white_check_mark:   |
-
+| Название     |    Сложность    |      Готовность      |
+|--------------|:---------------:|:--------------------:|
+| Прямой поиск |     O(N*M)      |  :white_check_mark: |
+| РБ           |  O(N*M) / O(N)  |   :white_check_mark: |
+| КМП          |      O(M)       |  :white_check_mark:  |
+| БМХ          | O(N*M) / O(N/M) | :white_check_mark:   |
+Алгоритм Ахо — Корасик? 
 
 
