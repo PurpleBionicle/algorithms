@@ -1,7 +1,7 @@
+import general_input
 def substr_search():
     # Прямой проход
-    str = input('Введите строку:')
-    substr = input('Введите подстроку:')
+    str, substr = general_input.substr()
     j, index = 0, 0
     for i in range(len(str)):
         if str[i] == substr[j]:

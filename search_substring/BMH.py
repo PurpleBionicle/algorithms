@@ -1,8 +1,7 @@
-
+import general_input
 def substr_search():
     global j
-    str = input('Введите строку:')
-    substr = input('Введите подстроку:')
+    str , substr = general_input.substr()
 
     substr_set = set()
     substr_shift = {}  # словарь
