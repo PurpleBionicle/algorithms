@@ -1,8 +1,8 @@
-import general_input
+import General_input
 
 
 def substr_search():
-    str, substr = general_input.substr()
+    str, substr = General_input.substr()
     if len(str) < len(substr):
         raise Exception
     p = 223  # простое число , 223 для уменьшения числа коллизий

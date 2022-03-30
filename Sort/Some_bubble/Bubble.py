@@ -1,8 +1,8 @@
-import general_input
+import General_input
 
 
 def sort():
-    n, a = general_input.sort()
+    n, a = General_input.sort()
 
     for i in range(n - 1):
         for j in range(n - 1 - i):

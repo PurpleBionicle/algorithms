@@ -1,4 +1,4 @@
-import general_input
+import General_input
 
 
 def find_pi(substr):
@@ -22,7 +22,7 @@ def find_pi(substr):
 
 def substr_search():
     # Кнута-Морриса-Пратта
-    str, substr = general_input.substr()
+    str, substr = General_input.substr()
     pi = find_pi(substr)
 
     i, j = 0, 0

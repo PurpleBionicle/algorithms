@@ -1,6 +1,6 @@
-import general_input
+import General_input
 def sort():
-    n,a = general_input.sort()
+    n,a = General_input.sort()
     left = 0
     right = n-1
     while left<right:
