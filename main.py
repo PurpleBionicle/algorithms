@@ -1,10 +1,8 @@
-from _ast import Import
-
 import Sort.Some_bubble.Bubble
 from Search_substring import KMP, BMH, direct_passage, RK
-from Sort.Simple_sorts import Insertion
+from Sort.Simple_sorts import Insertion ,Selection
 from Sort.Some_bubble import Bubble, Comb, Shaker
-
+from  Sort.Efficient_sorts import Heap
 
 def substring_navigate(k):
     if k == 1:
@@ -41,9 +39,9 @@ def sort_navigate(k):
         i = int(input('1.Сортировка вставками\n'
                       '2.Сортировка выбором\n'))
         if i==1:
-            Sort.Simple_sorts.Insertion()
+            Sort.Simple_sorts.Insertion.sort()
         elif i==2:
-            pass
+            Sort.Simple_sorts.Selection.sort()
         else:
             raise Exception
 
@@ -52,7 +50,14 @@ def sort_navigate(k):
         i = int(input('1.Быстрая сортировка\n'
                       '2.Сортировка слиянием\n'
                       '3.Пирамидальная сортировка\n'))
-
+        if i==1:
+            pass
+        elif i==2:
+            pass
+        elif i==3:
+            Sort.Efficient_sorts.Heap.sort()
+        else:
+            raise Exception
     else:
         raise Exception
 
