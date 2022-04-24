@@ -1,19 +1,17 @@
-import General_input
-def sort():
-    n,a = General_input.sort()
+def sort(list):
     left = 0
-    right = n-1
-    while left<right:
-        for i in range(right , left, -1):
+    right = len(list) - 1
+    while left < right:
+        for i in range(right, left, -1):
             # обратный проход
-            if a[i] < a[i - 1]:
-                a[i], a[i - 1] = a[i - 1], a[i]
+            if list[i] < list[i - 1]:
+                list[i], list[i - 1] = list[i - 1], list[i]
 
-        left+=1
-            # прямой проход
-        for i in range(left,right):
-            if a[i] > a[i + 1]:
-                a[i], a[i + 1] = a[i + 1], a[i]
-        right-=1
+        left += 1
+        # прямой проход
+        for i in range(left, right):
+            if list[i] > list[i + 1]:
+                list[i], list[i + 1] = list[i + 1], list[i]
+        right -= 1
 
-    print(f'Результат:{a}')
+    return list

@@ -1,38 +1,58 @@
-import Sort.Some_bubble.Bubble
-from Search_substring import KMP, BMH, direct_passage, RK
+import Sort.Some_bubble
+from Search_substring import KMP, BMH, direct_passage, RK, Test_substr
 from Sort.Simple_sorts import Insertion, Selection
 from Sort.Some_bubble import Bubble, Comb, Shaker
 from Sort.Efficient_sorts import Heap, Merge, Quick
+import General_input
+import unittest
+
+
+def print_answer(answer):
+    print(f"результат={answer}")
 
 
 def substring_navigate(k):
+    str, substr = '', ''
+    answer = ''
+    if k != 0:
+        str, substr = General_input.substr()
     if k == 1:
-        direct_passage.substr_search()
+        answer = direct_passage.substr_search(str, substr)
 
     elif k == 2:
-        RK.substr_search()
+        answer = RK.substr_search(str, substr)
 
     elif k == 3:
-        KMP.substr_search()
+        answer = KMP.substr_search(str, substr)
 
     elif k == 4:
-        BMH.substr_search()
+        answer = BMH.substr_search(str, substr)
+
+    elif k == 0:
+        unittest.main()
 
     else:
         raise IndexError
 
+    print_answer(answer)
+
 
 def sort_navigate(k):
+    list = []
+    answer = []
+    if k != 0:
+        list = General_input.sort()
+
     if k == 1:
         i = int(input('1.Сортировка пузырьком\n'
                       '2.Сортировка перемешиванием\n'
                       '3.Сортировка расчёской\n'))
         if i == 1:
-            Sort.Some_bubble.Bubble.sort()
+            answer = Sort.Some_bubble.Bubble.sort(list)
         elif i == 2:
-            Sort.Some_bubble.Shaker.sort()
+            answer = Sort.Some_bubble.Shaker.sort(list)
         elif i == 3:
-            Sort.Some_bubble.Comb.sort()
+            answer = Sort.Some_bubble.Comb.sort(list)
         else:
             raise Exception
 
@@ -40,27 +60,32 @@ def sort_navigate(k):
         i = int(input('1.Сортировка вставками\n'
                       '2.Сортировка выбором\n'))
         if i == 1:
-            Sort.Simple_sorts.Insertion.sort()
+            answer = Sort.Simple_sorts.Insertion.sort(list)
         elif i == 2:
-            Sort.Simple_sorts.Selection.sort()
+            answer = Sort.Simple_sorts.Selection.sort(list)
         else:
             raise Exception
-
 
     elif k == 3:
         i = int(input('1.Быстрая сортировка\n'
                       '2.Сортировка слиянием\n'
                       '3.Пирамидальная сортировка\n'))
         if i == 1:
-            Sort.Efficient_sorts.Quick.sort()
+            answer = Sort.Efficient_sorts.Quick.sort(list)
         elif i == 2:
-            Sort.Efficient_sorts.Merge.sort()
+            answer = Sort.Efficient_sorts.Merge.sort(list)
         elif i == 3:
-            Sort.Efficient_sorts.Heap.sort()
+            answer = Sort.Efficient_sorts.Heap.sort(list)
         else:
             raise Exception
+
+    elif k == 0:
+        unittest.main()
+
     else:
         raise Exception
+
+    print_answer(answer)
 
 
 if __name__ == '__main__':

@@ -1,8 +1,4 @@
-import General_input
-
-
-def substr_search():
-    str, substr = General_input.substr()
+def substr_search(str, substr):
     if len(str) < len(substr):
         raise Exception
     p = 223  # простое число , 223 для уменьшения числа коллизий
@@ -29,6 +25,5 @@ def substr_search():
             current -= hash_p[i - 1]
         # приводим хэши к одной степени и сравниваем
         if current == hash_substr * p_pow[i]:
-            print(f'Найдена подстрока с индексом {i}')
-            break
+            return i
         i += 1

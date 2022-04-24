@@ -1,7 +1,5 @@
-import General_input
-def substr_search():
+def substr_search(str, substr):
     # Прямой проход
-    str, substr = General_input.substr()
     j, index = 0, 0
     for i in range(len(str)):
         if str[i] == substr[j]:
@@ -9,8 +7,8 @@ def substr_search():
         else:
             j = 0
         if j == len(substr):
-            print(f'Подстрока найдена по индексу:{i-j}')
+            return i - j + 1
             break
 
-    if j!= len(substr):
-        print('Подстрока не найдена')
+    if j != len(substr):
+        return -1

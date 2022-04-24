@@ -1,6 +1,3 @@
-import General_input
-
-
 def find_pi(substr):
     pi = [0] * len(substr)
     j = 0
@@ -20,9 +17,8 @@ def find_pi(substr):
     return pi
 
 
-def substr_search():
+def substr_search(str, substr):
     # Кнута-Морриса-Пратта
-    str, substr = General_input.substr()
     pi = find_pi(substr)
 
     i, j = 0, 0
@@ -31,12 +27,11 @@ def substr_search():
             i += 1
             j += 1
             if j == len(substr):
-                print(f'Найдена подстрока с индексом {i - len(substr)}')
-                break
+                return i - len(substr)
         else:
             if j > 0:
                 j = pi[j - 1]
             else:
                 i += 1
                 if i == len(str):
-                    print('Подстрока не найдена')
+                    return -1

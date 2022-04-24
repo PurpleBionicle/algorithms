@@ -1,7 +1,5 @@
-import General_input
-def substr_search():
+def substr_search(str, substr):
     global j
-    str , substr = General_input.substr()
 
     substr_set = set()
     substr_shift = {}  # словарь
@@ -19,22 +17,21 @@ def substr_search():
     substr_shift['*'] = len_of_sub
 
     """Поиск построки"""
-    i=len_of_sub
-    while i <len(str):
-        k=0
-        for j in range(len_of_sub-1,-1,-1):
-            if str[i-k] != substr[j]:
-                if j==len_of_sub-1: # если последний знак подстроки
-                    off= substr_shift[str[i]] if substr_shift.get(str[i],False) \
+    i = len_of_sub
+    while i < len(str):
+        k = 0
+        for j in range(len_of_sub - 1, -1, -1):
+            if str[i - k] != substr[j]:
+                if j == len_of_sub - 1:  # если последний знак подстроки
+                    off = substr_shift[str[i]] if substr_shift.get(str[i], False) \
                         else substr_shift['*']
                 else:
-                    off= substr_shift[substr[j]]
-                i+=off
+                    off = substr_shift[substr[j]]
+                i += off
                 break
 
-            k+=1
+            k += 1
 
-        if j==0:
-            print(f'Найдена подстрока с индексом {i-k+1}')
-            break
-
+        if j == 0:
+            return i - k + 1
+    return -1

@@ -1,17 +1,12 @@
-import General_input
+def sort(list):
+    for i in range(len(list) - 1):
+        minimum = min(list[i:])
 
+        buf, list[i] = list[i], minimum
 
-def sort():
-    n, a = General_input.sort()
-
-    for i in range(n - 1):
-        minimum = min(a[i:])
-
-        buf, a[i] = a[i], minimum
-
-        for k in range(i + 1, n):
-            if minimum == a[k]:
-                a[k] = buf
+        for k in range(i + 1, len(list)):
+            if minimum == list[k]:
+                list[k] = buf
                 break
 
-    print(f'Результат:{a}')
+    return list

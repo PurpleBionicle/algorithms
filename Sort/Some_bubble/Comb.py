@@ -1,21 +1,16 @@
-import General_input
-
-
-def sort():
-    n, a = General_input.sort()
-
+def sort(list):
     POOLING_FACTOR = 1.247
 
-    step = int((len(a) - 1) / POOLING_FACTOR)
+    step = int((len(list) - 1) / POOLING_FACTOR)
 
     while step >= 1:
-        for i in range(len(a) - step):
-            if a[i] > a[i + step]:
-                a[i], a[i + step] = a[i + step], a[i]
+        for i in range(len(list) - step):
+            if list[i] > list[i + step]:
+                list[i], list[i + step] = list[i + step], list[i]
         step = int(step / POOLING_FACTOR)
 
-    for i in range(n - 1):
-        if a[i] > a[i + 1]:
-            a[i], a[i + 1] = a[i + 1], a[i]
+    for i in range(len(list) - 1):
+        if list[i] > list[i + 1]:
+            list[i], list[i + 1] = list[i + 1], list[i]
 
-    print(f'Результат:{a}')
+    return list

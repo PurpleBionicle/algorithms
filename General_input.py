@@ -3,7 +3,7 @@ def sort():
     a = []
     for i in range(n):
         a.append(int(input(('Введите элемент:'))))
-    return n, a
+    return a
 
 
 def substr():
