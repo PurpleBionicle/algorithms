@@ -1,4 +1,5 @@
 def find_pi(substr):
+    "префиксная функция"
     pi = [0] * len(substr)
     j = 0
     i = 1
@@ -18,6 +19,11 @@ def find_pi(substr):
 
 
 def substr_search(str, substr):
+    """
+    Метод основан на префиксах (схожесть подстрок и строк)
+    :param  строки и подстрока
+    :return: индекс 1 элемента подстроки
+    """
     # Кнута-Морриса-Пратта
     pi = find_pi(substr)
 

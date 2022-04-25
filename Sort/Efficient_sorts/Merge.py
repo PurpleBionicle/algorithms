@@ -1,4 +1,9 @@
 def merge(list1, list2):
+    """
+    Метод основан на рекурсивном слияние двух массивов
+    :param list: исходный массив
+    :return: отсортированный массив
+    """
     i, j = 0, 0
     merge_list = []
     while i < len(list1) and j < len(list2):

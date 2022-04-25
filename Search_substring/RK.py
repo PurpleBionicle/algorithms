@@ -1,4 +1,9 @@
 def substr_search(str, substr):
+    """
+    Метод основан на хэше подстрок
+    :param  строки и подстрока
+    :return: индекс 1 элемента подстроки
+    """
     if len(str) < len(substr):
         raise Exception
     p = 223  # простое число , 223 для уменьшения числа коллизий

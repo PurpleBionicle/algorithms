@@ -1,4 +1,9 @@
 def sort(list):
+    """
+    Просто находится меньший элемент и ставится в начало
+    :param list: исходный массив
+    :return: отсортированный массив
+    """
     for i in range(len(list) - 1):
         minimum = min(list[i:])
 

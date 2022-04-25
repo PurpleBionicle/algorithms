@@ -1,10 +1,9 @@
-import Sort.Some_bubble
-from Search_substring import KMP, BMH, direct_passage, RK, Test_substr
+import General_input
+import Sort
+from Search_substring import KMP, BMH, direct_passage, RK
+from Sort.Efficient_sorts import Heap, Merge, Quick
 from Sort.Simple_sorts import Insertion, Selection
 from Sort.Some_bubble import Bubble, Comb, Shaker
-from Sort.Efficient_sorts import Heap, Merge, Quick
-import General_input
-import unittest
 
 
 def print_answer(answer):
@@ -12,6 +11,7 @@ def print_answer(answer):
 
 
 def substring_navigate(k):
+    ":param k: определяет какая функция-поиска подстроки будет вызываться"
     str, substr = '', ''
     answer = ''
     if k != 0:
@@ -29,7 +29,7 @@ def substring_navigate(k):
         answer = BMH.substr_search(str, substr)
 
     elif k == 0:
-        unittest.main()
+        pass
 
     else:
         raise IndexError
@@ -38,6 +38,7 @@ def substring_navigate(k):
 
 
 def sort_navigate(k):
+    ":param k: определяет какая функция-сортировка будет вызываться"
     list = []
     answer = []
     if k != 0:
@@ -80,7 +81,7 @@ def sort_navigate(k):
             raise Exception
 
     elif k == 0:
-        unittest.main()
+        pass
 
     else:
         raise Exception
@@ -89,7 +90,6 @@ def sort_navigate(k):
 
 
 if __name__ == '__main__':
-
     print('Выберите один из вариантов:')
     i = int(input('1.Сортировка\n'
                   '2.Поиск подстроки\n'

@@ -1,4 +1,9 @@
 def sort(list):
+    """
+    swap с различным шаго
+    :param list: исходный массив
+    :return: отсортированный массив
+    """
     POOLING_FACTOR = 1.247
 
     step = int((len(list) - 1) / POOLING_FACTOR)

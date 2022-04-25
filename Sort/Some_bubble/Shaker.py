@@ -1,4 +1,9 @@
 def sort(list):
+    """
+    сортировка пузырьком , но в обе стороны
+    :param list: исходный массив
+    :return: отсортированный массив
+    """
     left = 0
     right = len(list) - 1
     while left < right:

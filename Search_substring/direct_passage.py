@@ -1,5 +1,9 @@
 def substr_search(str, substr):
-    # Прямой проход
+    """
+    Перебор всех вариантов
+    :param  строки и подстрока
+    :return: индекс 1 элемента подстроки
+    """
     j, index = 0, 0
     for i in range(len(str)):
         if str[i] == substr[j]:

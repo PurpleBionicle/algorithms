@@ -1,4 +1,9 @@
 def sort(list):
+    """
+    Метод основан на двоичном дерево
+    :param list: исходный массив
+    :return: отсортированный массив
+    """
     items_lower = []
     items_greater = []
 
