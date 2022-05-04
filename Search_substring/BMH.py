@@ -5,7 +5,6 @@ def substr_search(str, substr):
     :param  строки и подстрока
     :return: индекс 1 элемента подстроки
     """
-    global j
 
     substr_set = set()
     substr_shift = {}  # словарь
@@ -13,9 +12,9 @@ def substr_search(str, substr):
 
     """ Создание словаря смещений"""
     for i in range(len_of_sub - 2, -1, -1):
-        if i not in substr_set:
-            substr_set.add(substr[i])
+        if substr[i] not in substr_set:
             substr_shift[substr[i]] = len_of_sub - i - 1
+            substr_set.add(substr[i])
 
     if substr[-1] not in substr_set:
         substr_shift[substr[-1]] = len_of_sub
@@ -23,21 +22,29 @@ def substr_search(str, substr):
     substr_shift['*'] = len_of_sub
 
     """Поиск построки"""
-    i = len_of_sub
-    while i < len(str):
-        k = 0
-        for j in range(len_of_sub - 1, -1, -1):
-            if str[i - k] != substr[j]:
-                if j == len_of_sub - 1:  # если последний знак подстроки
-                    off = substr_shift[str[i]] if substr_shift.get(str[i], False) \
-                        else substr_shift['*']
-                else:
-                    off = substr_shift[substr[j]]
-                i += off
-                break
 
-            k += 1
+    if len_of_sub <= len(str):
+        i = len_of_sub - 1
 
-        if j == 0:
-            return i - k + 1
+        while i < len(str):
+            k = 0
+            j = 0
+            flag_of_find = False
+            for j in range(len_of_sub - 1, -1, -1):
+                if str[i - k] != substr[j]:
+                    if j == len_of_sub - 1:  # если последний знак подстроки
+                        off = substr_shift[str[i]] if substr_shift.get(str[i], False) \
+                            else substr_shift['*']
+                    else:
+                        off = substr_shift[substr[j]]
+                    i += off
+                    flag_of_find = True
+                    break
+
+                k += 1
+
+            if not flag_of_find:
+                return i - k + 1
+        return -1
+
     return -1

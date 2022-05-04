@@ -5,7 +5,7 @@ def substr_search(str, substr):
     :return: индекс 1 элемента подстроки
     """
     if len(str) < len(substr):
-        raise Exception
+        return -1
     p = 223  # простое число , 223 для уменьшения числа коллизий
     p_pow = [1, ]
     for i in range(len(str) - 1):
@@ -32,3 +32,4 @@ def substr_search(str, substr):
         if current == hash_substr * p_pow[i]:
             return i
         i += 1
+    return -1
